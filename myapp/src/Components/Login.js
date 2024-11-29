@@ -5,23 +5,21 @@ export default function Login() {
     const navigate = useNavigate();
     const [user, setUser] = useState({ username: "", pwd: "", error: "" })
     const getTextInput = (e) => {
-
         const { name, value } = e.target;
         setUser((prevUser) => ({
             ...prevUser, [name]: value,
         }))
-
-        const aunthenticate = () => {
-            if (user.username === "Admin" && user.pwd === "abc@123") {
-                setUser({ username: "", pwd: "", error: "" })
-                navigate('/dash');
-            } else {
-                setUser({ 'error': "Please check your username and password !" })
-            }
+    }
+    const aunthenticate = () => {
+        if (user.username === "Admin" && user.pwd === "abc@123") {
+            setUser({ username: "", pwd: "", error: "" })
+            navigate('/dash');
+        } else {
+            setUser({ 'error': "Please check your username and password !" })
         }
     }
     return (
-        <div>
+        <div align='center'>
             <h1>Login here</h1>
             <table>
                 <tr>
